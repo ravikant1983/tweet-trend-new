@@ -7,7 +7,7 @@ environment {
     stages {
         stage("build"){
             steps {
-                 echo "----------- build started now----------"
+                 echo "----------- build started----------"
                 sh 'mvn clean deploy'
                  echo "----------- build complted ----------"
            }
