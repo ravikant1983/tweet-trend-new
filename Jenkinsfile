@@ -25,7 +25,7 @@ environment {
                 axes {
                     axis {
                         name "JAVA"
-                        values "17"
+                        values "17.0.10"
                     }
 		}
 			}
