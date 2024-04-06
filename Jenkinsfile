@@ -27,7 +27,7 @@ environment {
       scannerHome = tool 'sonar-scanner'
     }
     steps{
-    withEnv(["JAVA_HOME=${tool '17.0.10'}", "PATH=${tool '17.0.10'}/bin:${env.PATH}"])
+    withEnv(["JAVA_HOME=${tool 'java-17-openjdk-amd64'}", "PATH=${tool 'java-17-openjdk-amd64'}/bin:${env.PATH}"])
     withSonarQubeEnv('sonarqube-server') { // If you have configured more than one global server connection, you can specify its name
       sh "${scannerHome}/bin/sonar-scanner"
     }
