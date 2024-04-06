@@ -21,13 +21,16 @@ environment {
         }
 
     stage('SonarQube analysis') {
+	    {
+        agent {
+            docker { image 'openjdk:17-alpine' }
+        }
 
 	    
     environment {
       scannerHome = tool 'sonar-scanner'
     }
     steps{
-    withEnv(["JAVA_HOME=${tool 'jdk-17.0.10'}", "PATH=${tool 'jdk-17.0.10'}/bin:${env.PATH}"])
     withSonarQubeEnv('sonarqube-server') { // If you have configured more than one global server connection, you can specify its name
       sh "${scannerHome}/bin/sonar-scanner"
     }
