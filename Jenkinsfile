@@ -23,6 +23,8 @@ environment {
     stage('SonarQube analysis') {
     environment {
       scannerHome = tool 'sonar-scanner'
+    }
+    environment {
 	PATH = "/usr/lib/jvm/java-17-openjdk-amd64/bin/java:$PATH"
     }
     steps{
