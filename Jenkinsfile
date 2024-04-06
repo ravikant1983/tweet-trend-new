@@ -21,14 +21,9 @@ environment {
         }
 
     stage('SonarQube analysis') {
-	                matrix {
-                axes {
-                    axis {
-                        name "JAVA"
-                        values "17.0.10"
-                    }
-		}
-			}
+                tools {
+                   jdk "jdk-17.0.10"
+                }
 	    
     environment {
       scannerHome = tool 'sonar-scanner'
