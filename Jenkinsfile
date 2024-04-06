@@ -21,12 +21,9 @@ environment {
         }
 
     stage('SonarQube analysis') {
-	    {
-        agent {
-            docker { image 'openjdk:17-alpine' }
-        }
-
-	    
+        tools {
+            jdk '17.0.10'
+        }	    
     environment {
       scannerHome = tool 'sonar-scanner'
     }
