@@ -22,7 +22,7 @@ environment {
 
     stage('SonarQube analysis') {
         tools {
-            jdk '17.0.10+7-Ubuntu-122.04.1'
+            jdk 'java17'
         }	    
     environment {
       scannerHome = tool 'sonar-scanner'
