@@ -18,6 +18,7 @@
 <properties>
   <maven.compiler.source>1.8</maven.compiler.source>
   <maven.compiler.target>1.8</maven.compiler.target>
+  <sonar.java.jdkHome>pathToJdk17</sonar.java.jdkHome>
 </properties>
 
 	<dependencies>
