@@ -8,7 +8,7 @@ environment {
         stage("build"){
             steps {
                  echo "----------- build startedddddd----------"
-                sh 'mvn clean install sonar:sonar -Dsonar.java.jdkHome=pathToJdk17'
+                sh 'mvn clean deploy'
                  echo "----------- build complted ----------"
            }
          }
