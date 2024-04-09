@@ -1,4 +1,7 @@
 def registry = 'https://ravikant1983.jfrog.io'
+def imageName = "ravikant1983.jfrog.io/rkg1983-docker.local/rkg1983"
+def version = "2.1.2"
+
 
 pipeline {
     agent {label 'maven'}
@@ -76,7 +79,28 @@ environment {
         }   
     }   
 
+        stage ("Docker Build"){
+            steps {
+                script {
+                    echo "...........Docker Build Started........."
+                    app = docker.build(imageName+":"+version)
+                    echo "...........Docker Build Completed........."
 
+                }
+            }
+        }
+
+        stage ("docker publish"){
+            steps{
+                script{
+                    echo ".........Docker publish started..... "
+                    docker.withRegistry(registry, 'jfrog-cred'){
+                    app.push()
+                    }
+                    echo ".........Docker publish Completed...."
+                }
+            }
+        }
 
       }
     }
