@@ -90,7 +90,7 @@ environment {
             }
         }
 
-        stage ("docker publish"){
+        stage ("Docker Publish"){
             steps{
                 script{
                     echo ".........Docker publish started..... "
