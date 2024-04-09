@@ -1,5 +1,5 @@
 def registry = 'https://ravikant1983.jfrog.io'
-def imageName = "ravikant1983.jfrog.io/rkg1983-docker.docker.local/rkg1983"
+def imageName = "ravikant1983.jfrog.io/rkg1983-docker-docker-local/rkg1983"
 def version = "2.1.2"
 
 
