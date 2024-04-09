@@ -2,7 +2,7 @@ pipeline {
     agent {label 'maven'}
 
 environment {
-    PATH = "/opt/apache-maven-3.9.6/bin:$PATH"
+    PATH = "/opt/apache-maven-3.8.8/bin:$PATH"
 }
     stages {
         stage("build"){
@@ -21,6 +21,9 @@ environment {
         }
 
     stage('SonarQube analysis') {
+        tools {
+            jdk 'java17'
+        }	    
     environment {
       scannerHome = tool 'sonar-scanner'
     }
