@@ -102,5 +102,12 @@ environment {
             }
         }
 
+        stage ("Deploy k8s") {
+          steps {
+            script{
+              sh "./deploy.sh"
+            }
+          }
+        }
       }
     }
