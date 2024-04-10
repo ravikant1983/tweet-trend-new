@@ -106,7 +106,7 @@ environment {
           steps {
             script{
               echo '<--------------- Helm Deploy Started --------------->'
-              sh 'helm install rkg1983-v1 namtrend-0.1.0'
+              sh 'helm install rkg1983-v1 namtrend-0.1.0.tgz'
               echo '<--------------- Helm deploy Ends --------------->'
             }
           }
