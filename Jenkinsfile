@@ -102,10 +102,12 @@ environment {
             }
         }
 
-        stage ("Deploy k8s") {
+        stage ("HELM Deploy k8s") {
           steps {
             script{
-              sh "./deploy.sh"
+              echo '<--------------- Helm Deploy Started --------------->'
+              sh 'helm install rkg1983-v1 namtrend-0.1.0'
+              echo '<--------------- Helm deploy Ends --------------->'
             }
           }
         }
